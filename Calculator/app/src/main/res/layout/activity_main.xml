@@ -13,5 +13,46 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/title_view"
+        tools:text="@string/app_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <Button
+        android:text="Advanced"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/simple_calc_button"
+        android:id="@+id/advanced_calc_button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Quit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/about_button"
+        android:layout_alignStart="@+id/about_button"
+        android:id="@+id/quit_button"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="About"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/about_button"
+        android:layout_below="@+id/advanced_calc_button"
+        android:layout_alignStart="@+id/advanced_calc_button"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Simple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="139dp"
+        android:id="@+id/simple_calc_button"
+        android:layout_below="@+id/title_view"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
