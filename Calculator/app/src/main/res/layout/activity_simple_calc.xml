@@ -14,186 +14,212 @@
     grid:alignmentMode="alignBounds"
     grid:columnCount="4">
 
+
+
     <EditText
         android:layout_height="0dp"
         android:layout_width="0dp"
-        android:inputType="numberDecimal"
+        android:inputType="none"
         android:ems="10"
         android:id="@+id/display"
+        android:cursorVisible="false"
+        android:textAlignment="textEnd"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         grid:layout_columnSpan="4"
         grid:layout_columnWeight="1"
         grid:layout_rowWeight="1" />
 
     <Button
+        android:id="@+id/bksp_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="deleteLast"
         android:text="Bksp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         grid:layout_columnWeight="1"
         grid:layout_rowWeight="1" />
 
     <Button
+        android:id="@+id/C_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="deleteAll"
         android:text="C"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        grid:layout_columnWeight="1"
-        grid:layout_rowWeight="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         grid:layout_columnSpan="2"
+        grid:layout_columnWeight="1"
         grid:layout_gravity="fill"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
+        grid:layout_rowWeight="1" />
 
     <Button
+        android:id="@+id/sign_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="changeSign"
         android:text="±"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        grid:layout_columnWeight="1"
-        grid:layout_rowWeight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1" />
 
     <Button
+        android:id="@+id/seven_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="appendNumber"
         android:text="7"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        grid:layout_columnWeight="1"
-        grid:layout_rowWeight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1" />
 
     <Button
+        android:id="@+id/eight_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="appendNumber"
         android:text="8"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        grid:layout_columnWeight="1"
-        grid:layout_rowWeight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1" />
 
     <Button
+        android:id="@+id/nine_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="appendNumber"
         android:text="9"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        grid:layout_columnWeight="1"
-        grid:layout_rowWeight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1" />
 
     <Button
+        android:id="@+id/divide_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="divide"
         android:text="/"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        grid:layout_columnWeight="1"
-        grid:layout_rowWeight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1" />
 
     <Button
+        android:id="@+id/four_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="appendNumber"
         android:text="4"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        grid:layout_columnWeight="1"
-        grid:layout_rowWeight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1" />
 
     <Button
+        android:id="@+id/five_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="appendNumber"
         android:text="5"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        grid:layout_columnWeight="1"
-        grid:layout_rowWeight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1" />
 
     <Button
+        android:id="@+id/six_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="appendNumber"
         android:text="6"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        grid:layout_columnWeight="1"
-        grid:layout_rowWeight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1" />
 
     <Button
+        android:id="@+id/multiply_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="multiply"
         android:text="*"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        grid:layout_columnWeight="1"
-        grid:layout_rowWeight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1" />
 
     <Button
+        android:id="@+id/one_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="appendNumber"
         android:text="1"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        grid:layout_columnWeight="1"
-        grid:layout_rowWeight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1" />
 
     <Button
+        android:id="@+id/two_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="appendNumber"
         android:text="2"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        grid:layout_columnWeight="1"
-        grid:layout_rowWeight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1" />
 
     <Button
+        android:id="@+id/three_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="appendNumber"
         android:text="3"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        grid:layout_columnWeight="1"
-        grid:layout_rowWeight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1" />
 
     <Button
+        android:id="@+id/substract_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="substract"
         android:text="-"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        grid:layout_columnWeight="1"
-        grid:layout_rowWeight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1" />
 
     <Button
+        android:id="@+id/zero_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="appendNumber"
         android:text="0"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        grid:layout_columnWeight="1"
-        grid:layout_rowWeight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1" />
 
     <Button
+        android:id="@+id/dot_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="addDot"
         android:text="."
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        grid:layout_columnWeight="1"
-        grid:layout_rowWeight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1" />
 
     <Button
+        android:id="@+id/equal_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="calculate"
         android:text="="
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        grid:layout_columnWeight="1"
-        grid:layout_rowWeight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1" />
 
     <Button
-        android:text="+"
-        android:layout_height="0dp"
+        android:id="@+id/add_button"
         android:layout_width="0dp"
-        grid:layout_columnWeight="1"
-        grid:layout_rowWeight="1"
+        android:layout_height="0dp"
+        android:onClick="add"
+        android:text="+"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1" />
 
 </android.support.v7.widget.GridLayout>

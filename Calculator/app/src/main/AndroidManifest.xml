@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SimpleCalcActivity" />
+        <activity android:name=".SimpleCalcActivity"
+                  android:windowSoftInputMode="stateAlwaysHidden"/>
         <activity android:name=".AdvancedCalcActivity" />
         <activity android:name=".AboutActivity"></activity>
     </application>
