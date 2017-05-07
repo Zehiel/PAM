@@ -14,7 +14,11 @@ public class SimpleCalcActivity extends AppCompatActivity {
 
     private double valueMemory = 0.0;
     private char operationSign = 'x';
+    private boolean first = true;
+    private boolean isDecimal = false;
     private EditText display;
+    private EditText display_last;
+    private NumberFormat format = NumberFormat.getNumberInstance(Locale.getDefault());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,38 +26,81 @@ public class SimpleCalcActivity extends AppCompatActivity {
         setContentView(R.layout.activity_simple_calc);
         display = (EditText) findViewById(R.id.display);
         display.setText("0");
+        display_last = (EditText) findViewById(R.id.display_last) ;
+        first = true;
+
+        format.setMinimumFractionDigits(0);
+        format.setGroupingUsed(false);
     }
 
     public void appendNumber(View view){
 
-        if(view.getId()==R.id.zero_button){
-            display.append("0");
-        }else if(view.getId()==R.id.one_button){
-            display.append("1");
-        }else if(view.getId()==R.id.two_button){
-            display.append("2");
-        }else if(view.getId()==R.id.three_button){
-            display.append("3");
-        }else if(view.getId()==R.id.four_button){
-            display.append("4");
-        }else if(view.getId()==R.id.five_button){
-            display.append("5");
-        }else if(view.getId()==R.id.six_button){
-            display.append("6");
-        }else if(view.getId()==R.id.seven_button){
-            display.append("7");
-        }else if(view.getId()==R.id.eight_button){
-            display.append("8");
-        }else if(view.getId()==R.id.nine_button){
-            display.append("9");
+        if(first==true){
+            if(view.getId()==R.id.zero_button){
+                display.setText("0");
+                first=true;
+            }else if(view.getId()==R.id.one_button){
+                display.setText("1");
+                first=false;
+            }else if(view.getId()==R.id.two_button){
+                display.setText("2");
+                first=false;
+            }else if(view.getId()==R.id.three_button){
+                display.setText("3");
+                first=false;
+            }else if(view.getId()==R.id.four_button){
+                display.setText("4");
+                first=false;
+            }else if(view.getId()==R.id.five_button){
+                display.setText("5");
+                first=false;
+            }else if(view.getId()==R.id.six_button){
+                display.setText("6");
+                first=false;
+            }else if(view.getId()==R.id.seven_button){
+                display.setText("7");
+                first=false;
+            }else if(view.getId()==R.id.eight_button){
+                display.setText("8");
+                first=false;
+            }else if(view.getId()==R.id.nine_button){
+                display.setText("9");
+                first=false;
+            }
+        }else {
+            if(view.getId()==R.id.zero_button){
+                display.append("0");
+            }else if(view.getId()==R.id.one_button){
+                display.append("1");
+            }else if(view.getId()==R.id.two_button){
+                display.append("2");
+            }else if(view.getId()==R.id.three_button){
+                display.append("3");
+            }else if(view.getId()==R.id.four_button){
+                display.append("4");
+            }else if(view.getId()==R.id.five_button){
+                display.append("5");
+            }else if(view.getId()==R.id.six_button){
+                display.append("6");
+            }else if(view.getId()==R.id.seven_button){
+                display.append("7");
+            }else if(view.getId()==R.id.eight_button){
+                display.append("8");
+            }else if(view.getId()==R.id.nine_button){
+                display.append("9");
+            }
         }
+
+
     }
 
     public void deleteAll(View view){
 
         display.setText("0");
+        display_last.setText("");
         valueMemory = 0.0;
         operationSign = 'x';
+        first = true;
     }
 
     public void deleteLast(View view){
@@ -62,6 +109,7 @@ public class SimpleCalcActivity extends AppCompatActivity {
         String textToPrint = currentText.substring(0,currentText.length()-1);
         if(textToPrint.length()==0){
             display.setText("0");
+            first = true;
         }else {
             display.setText(textToPrint);
         }
@@ -85,6 +133,9 @@ public class SimpleCalcActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(context,msg,duration);
             toast.show();
         }else {
+            if(first==true){
+                first=false;
+            }
             display.append(".");
         }
 
@@ -92,7 +143,7 @@ public class SimpleCalcActivity extends AppCompatActivity {
 
     public void changeSign(View view){
 
-        if(Double.parseDouble(display.getText().toString())!= 0.0){
+        if(Double.parseDouble(display.getText().toString())!= 0.0 ){
             if(display.getText().charAt(0)!='-'){
                 CharSequence currentText = display.getText();
                 CharSequence textToPrint = "-"+currentText;
@@ -118,7 +169,9 @@ public class SimpleCalcActivity extends AppCompatActivity {
             try{
                 valueMemory = Double.parseDouble(display.getText().toString());
                 operationSign = '-';
-                display.setText("");
+                display_last.setText(format.format(valueMemory));
+                display.setText("0");
+                first = true;
             }catch(NumberFormatException e){
                 Context context = getApplicationContext();
                 CharSequence msg = "Wprowadzono nieprawidlowa liczbe lub nie wprowadzono wartosci";
@@ -134,7 +187,9 @@ public class SimpleCalcActivity extends AppCompatActivity {
             try{
                 valueMemory = Double.parseDouble(display.getText().toString());
                 operationSign = '+';
-                display.setText("");
+                display_last.setText(format.format(valueMemory));
+                display.setText("0");
+                first = true;
             }catch(NumberFormatException e){
                 Context context = getApplicationContext();
                 CharSequence msg = "Incorrect number entered or no value at all";
@@ -151,7 +206,9 @@ public class SimpleCalcActivity extends AppCompatActivity {
             try{
                 valueMemory = Double.parseDouble(display.getText().toString());
                 operationSign = '*';
-                display.setText("");
+                display_last.setText(format.format(valueMemory));
+                display.setText("0");
+                first = true;
             }catch(NumberFormatException e){
                 Context context = getApplicationContext();
                 CharSequence msg = "Incorrect number entered or no value at all";
@@ -169,7 +226,8 @@ public class SimpleCalcActivity extends AppCompatActivity {
             try{
                 valueMemory = Double.parseDouble(display.getText().toString());
                 operationSign = '/';
-                display.setText("");
+                display_last.setText(format.format(valueMemory));
+                display.setText("0");
             }catch(NumberFormatException e){
                 Context context = getApplicationContext();
                 CharSequence msg = "Wprowadzono nieprawidlowa liczbe lub nie wprowadzono wartosci";
@@ -181,21 +239,57 @@ public class SimpleCalcActivity extends AppCompatActivity {
     }
 
     public void calculate(View view){
-        NumberFormat format = NumberFormat.getNumberInstance(Locale.getDefault());
-        format.setMinimumFractionDigits(0);
-        format.setGroupingUsed(false);
+
+        display_last.setText("");
         if(operationSign=='+' && display.getText().toString().length()!=0){
             Double result = Double.parseDouble(display.getText().toString()) + valueMemory;
-            display.setText(format.format(result));
+            if(result.toString().length()>20){
+                Context context = getApplicationContext();
+                CharSequence msg = "Result too big to display";
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context,msg,duration);
+                toast.show();
+            }else {
+                display.setText(format.format(result));
+                first=true;
+            }
         }else if(operationSign=='-' && display.getText().toString().length()!=0){
             Double result = Double.parseDouble(display.getText().toString()) - valueMemory;
-            display.setText(format.format(result));
+            if(result.toString().length()>20){
+                Context context = getApplicationContext();
+                CharSequence msg = "Result too big to display";
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context,msg,duration);
+                toast.show();
+            }else {
+                display.setText(format.format(result));
+                first=true;
+            }
         }else if(operationSign=='*' && display.getText().toString().length()!=0){
             Double result = Double.parseDouble(display.getText().toString()) * valueMemory;
-            display.setText(format.format(result));
+            if(result.toString().length()>20){
+                Context context = getApplicationContext();
+                CharSequence msg = "Result too big to display";
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context,msg,duration);
+                toast.show();
+            }else {
+                display.setText(format.format(result));
+                first=true;
+            }
         }else if(operationSign=='/' && display.getText().toString().length()!=0){
             Double result = Double.parseDouble(display.getText().toString()) / valueMemory;
-            display.setText(format.format(result));
+            if(result.toString().length()>20){
+                Context context = getApplicationContext();
+                CharSequence msg = "Result too big to display";
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context,msg,duration);
+                toast.show();
+            }else {
+                display.setText(format.format(result));
+                first=true;
+            }
+
         }else if(operationSign=='x' || display.getText().toString().length()==0){
             Context context = getApplicationContext();
             CharSequence msg = "No operation choose or no value entered";
