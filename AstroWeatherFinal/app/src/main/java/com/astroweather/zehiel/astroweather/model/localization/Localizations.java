@@ -16,6 +16,10 @@ public class Localizations implements Serializable {
         this.localizations = localizations;
     }
 
+    public Localizations() {
+        this.localizations = new HashSet<>();
+    }
+
     public HashSet<Localization> getLocalizations() {
         return localizations;
     }

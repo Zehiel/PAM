@@ -1,5 +1,6 @@
 package com.astroweather.zehiel.astroweather.model.weather;
 
+import com.astroweather.zehiel.astroweather.model.Units;
 import com.astroweather.zehiel.astroweather.model.localization.LocalizationData;
 
 import java.io.Serializable;

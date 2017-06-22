@@ -7,11 +7,12 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.astroweather.zehiel.astroweather.fragments.MoonFragment;
 import com.astroweather.zehiel.astroweather.fragments.SunFragment;
+import com.astroweather.zehiel.astroweather.fragments.WeatherNowFragment;
 
 public class FragmentActivity extends FragmentStatePagerAdapter {
 
     private Configuration conf;
-    private int numberOfFragments = 2;
+    private int numberOfFragments = 3;
     private String fragmentTitle[] = {"Sun Weather", "Moon Weather"};
 
     public FragmentActivity(FragmentManager fragmentManager, Configuration conf) {
@@ -26,6 +27,8 @@ public class FragmentActivity extends FragmentStatePagerAdapter {
                 return new SunFragment();
             case 1:
                 return new MoonFragment();
+            case 2:
+                return new WeatherNowFragment();
         }
         return null;
     }
