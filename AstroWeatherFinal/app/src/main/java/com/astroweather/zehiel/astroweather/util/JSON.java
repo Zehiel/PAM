@@ -33,7 +33,7 @@ public class JSON {
                 getFromJsonLocalizationData(jsonObj),
                 getFromJsonActualWeatherData(jsonObj),
                 getFromJsonWindData(jsonObj),
-                getFromJsonoFutherWeatherData(jsonObj),
+                getFromJsonoFutureWeatherData(jsonObj),
                 getFromJsonUnits(jsonObj)
         );
     }
@@ -60,7 +60,7 @@ public class JSON {
         return new Wind(windDirection,windForce, humidity, visibility);
     }
 
-    public static List<FutureWeather> getFromJsonoFutherWeatherData(JSONObject jsonObj) throws JSONException, ParseException {
+    public static List<FutureWeather> getFromJsonoFutureWeatherData(JSONObject jsonObj) throws JSONException, ParseException {
 
         JSONObject json = selectSpecialData(jsonObj);
         JSONArray array = json.getJSONObject("item").getJSONArray("forecast");

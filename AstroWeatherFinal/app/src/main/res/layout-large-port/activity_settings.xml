@@ -30,12 +30,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="Ustawienia"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textSize="32dp" />
+                android:text="Planety"
+                android:layout_weight="1"
+                android:textSize="32dp"
+                android:layout_gravity="center"
+                android:gravity="center_vertical|center_horizontal"/>
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -133,6 +133,79 @@
                     android:numeric="decimal" />
             </LinearLayout>
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:weightSum="3"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Pogoda"
+                android:textSize="32dp"
+                android:layout_gravity="center"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Lokalizacja:"
+                    android:gravity="left|center_vertical"
+                    android:layout_weight="6"
+                    android:textSize="16dp"
+                    android:layout_gravity="left" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/localizationTextView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="System:"
+                    android:gravity="left|center_vertical"
+                    android:layout_weight="6"
+                    android:textSize="16dp"
+                    android:layout_gravity="left" />
+
+                <Spinner
+                    android:id="@+id/spinnerDegrees"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4" >
+                </Spinner>
+
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout

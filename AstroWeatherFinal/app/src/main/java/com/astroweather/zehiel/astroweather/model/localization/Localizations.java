@@ -43,6 +43,8 @@ public class Localizations implements Serializable {
         return strings;
     }
 
+
+
     public boolean contains(String string){
         if(localizations != null || localizations.size() != 0){
             if(getStringValues().contains(string)){

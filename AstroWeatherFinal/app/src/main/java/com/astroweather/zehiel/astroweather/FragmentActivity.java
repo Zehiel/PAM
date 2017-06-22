@@ -5,9 +5,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.astroweather.zehiel.astroweather.fragments.FutureWeatherFragment;
 import com.astroweather.zehiel.astroweather.fragments.MoonFragment;
 import com.astroweather.zehiel.astroweather.fragments.SunFragment;
 import com.astroweather.zehiel.astroweather.fragments.WeatherNowFragment;
+import com.astroweather.zehiel.astroweather.fragments.WindFragment;
 
 public class FragmentActivity extends FragmentStatePagerAdapter {
 
@@ -29,6 +31,10 @@ public class FragmentActivity extends FragmentStatePagerAdapter {
                 return new MoonFragment();
             case 2:
                 return new WeatherNowFragment();
+            case 3:
+                return new FutureWeatherFragment();
+            case 4:
+                return new WindFragment();
         }
         return null;
     }

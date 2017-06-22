@@ -16,7 +16,7 @@ import java.text.ParseException;
 public class CorrectLocationDataTask extends AsyncTask<String,Void,Boolean> {
     @Override
     protected Boolean doInBackground(String... params) {
-        
+
         Weather weather = null;
         String country = params[0];
         String city = params[1];
