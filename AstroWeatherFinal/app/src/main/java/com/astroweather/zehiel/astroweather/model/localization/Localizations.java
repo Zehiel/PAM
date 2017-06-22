@@ -1,4 +1,4 @@
-package com.astroweather.zehiel.astroweather.model;
+package com.astroweather.zehiel.astroweather.model.localization;
 
 import java.io.Serializable;
 import java.util.HashSet;
