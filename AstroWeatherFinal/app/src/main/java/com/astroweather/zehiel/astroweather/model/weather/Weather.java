@@ -4,6 +4,7 @@ import com.astroweather.zehiel.astroweather.model.localization.LocalizationData;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by grusz on 22.06.2017.
